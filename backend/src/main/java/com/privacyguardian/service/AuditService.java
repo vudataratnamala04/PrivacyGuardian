@@ -1,0 +1,2 @@
+package com.privacyguardian.service; import com.privacyguardian.entity.AuditLog; import com.privacyguardian.repo.AuditLogRepository; import org.springframework.stereotype.Service;
+@Service public class AuditService {private final AuditLogRepository repo; public AuditService(AuditLogRepository r){repo=r;} public void log(String user,String action,String details,String severity){AuditLog a=new AuditLog();a.setUsername(user);a.setAction(action);a.setDetails(details);a.setSeverity(severity);repo.save(a);}}

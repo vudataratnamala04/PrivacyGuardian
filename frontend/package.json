@@ -1,0 +1,40 @@
+{
+  "name": "privacy-guardian-frontend",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "desktop": "electron .",
+    "dist:win": "npm run build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.privacyguardian.desktop",
+    "productName": "Privacy Guardian",
+    "directories": {
+      "output": "C:\\PG-Desktop-Build"
+    },
+    "files": [
+      "dist/**/*",
+      "main.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

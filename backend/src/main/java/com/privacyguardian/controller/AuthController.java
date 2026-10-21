@@ -1,0 +1,2 @@
+package com.privacyguardian.controller; import com.privacyguardian.dto.AuthDtos; import com.privacyguardian.service.AuthService; import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/auth") public class AuthController{private final AuthService s;public AuthController(AuthService s){this.s=s;}@PostMapping("/signup")public AuthDtos.AuthResponse signup(@RequestBody AuthDtos.Signup x){return s.signup(x);}@PostMapping("/login")public AuthDtos.AuthResponse login(@RequestBody AuthDtos.Login x){return s.login(x);}}

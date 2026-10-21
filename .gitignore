@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+!.env.example
+**/application.properties
+**/application-local.properties
+
+# Build output and dependencies
+**/node_modules/
+**/dist/
+**/target/
+**/release/
+**/win-unpacked/
+
+# Local logs
+*.log
+.DS_Store
+Thumbs.db
+
+# Local test files
+test-data/
+cd
+mvnd
+[Help[Help
